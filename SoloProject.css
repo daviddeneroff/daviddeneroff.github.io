@@ -1,0 +1,92 @@
+#header {
+  background-color: #3399ff;
+  margin: 10px 10px 0px 10px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+#header img#PicofMe {
+float: right;
+height: 150px;
+width: 200px;
+margin: 8px 25px 25px 0px;
+border: 1px solid black;
+}
+
+#buttons {
+  text-align: center;
+  font-size: 25px;
+  padding-left: 200px;
+  border: 2px solid black;
+  background-color: #ff99ff;
+}
+
+#header #SiteName {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 0px;
+  padding-left: 200px;
+
+}
+
+#OlderArticle img {
+    height: 200px;
+    width: 200px;
+    border:1px solid black;
+}
+
+
+#OlderArticle {
+  text-align: center;
+  border: 1px solid black;
+  width: 300px;
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  background-color: #00ffcc;
+}
+
+#older {
+  height:200px;
+  width: 200px;
+}
+
+#maintext {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #ffffcc;
+  padding-bottom: 30;
+  padding-top: 5px;
+  }
+
+#footer {
+  background-color: red;
+  margin: 10px;
+  text-align: center;
+  border-radius: 10px;
+  clear: both;
+}
+
+#share {
+  float:left;
+  display: inline;
+}
+
+
+#projects {
+  width: 200px;
+  height: 200px;
+  padding-left: 10px;
+  float: right;
+  padding: 24px;
+  background-color:#ffffcc;
+}
+
+#QuickClick {
+  background-color:#ffffcc;
+}
+
+a:hover {
+    color: yellow;
+}
