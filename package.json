@@ -1,0 +1,10 @@
+{
+	"name": "default",
+	"devDependencies": {
+		"grunt-contrib-requirejs": "^0.4.4",
+		"grunt-contrib-watch": "^0.6.1",
+		"rjs-build-analysis": "0.0.3",
+		"grunt-shell-spawn": "^0.3.2",
+		"grunt-sass": "^0.18.1"
+	}
+}
