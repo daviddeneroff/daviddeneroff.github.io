@@ -1,0 +1,10 @@
+@mixin hi {
+  .hey {
+    color: blue;
+  }
+}
+
+body {
+  background: green;
+  @include hi;
+}

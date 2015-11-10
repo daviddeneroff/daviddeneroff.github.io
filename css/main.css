@@ -1,0 +1,7 @@
+body {
+  background: green; }
+  body .hey {
+    color: blue; }
+
+body {
+  border: 10px solid red; }
