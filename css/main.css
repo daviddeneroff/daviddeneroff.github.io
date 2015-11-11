@@ -54,29 +54,28 @@ body ul.sections {
     z-index: -10; }
     body ul.sections li.about {
       background: #00CED6;
-      padding-top: 30px; }
-      body ul.sections li.about .about-main {
-        border: 2px solid red; }
-        body ul.sections li.about .about-main img {
-          border: 2px solid white;
-          border-radius: 100%;
-          width: 100%;
-          max-width: 100%; }
-        body ul.sections li.about .about-main .personal-technical {
-          padding: 40px;
-          margin: 0 20px;
-          border: 4px solid white; }
-          body ul.sections li.about .about-main .personal-technical .personal, body ul.sections li.about .about-main .personal-technical .technical {
-            cursor: pointer;
+      padding: 30px 0; }
+      body ul.sections li.about .about-main img {
+        padding: 5px;
+        border: 4px solid white;
+        border-radius: 100%;
+        width: 100%;
+        max-width: 100%; }
+      body ul.sections li.about .about-main .personal-technical {
+        padding: 40px;
+        margin: 0 20px;
+        border: 4px solid white; }
+        body ul.sections li.about .about-main .personal-technical .personal, body ul.sections li.about .about-main .personal-technical .technical {
+          cursor: pointer;
+          margin-bottom: 20px; }
+          body ul.sections li.about .about-main .personal-technical .personal h2, body ul.sections li.about .about-main .personal-technical .technical h2 {
+            font-weight: bold;
+            text-transform: capitalize;
             margin-bottom: 20px; }
-            body ul.sections li.about .about-main .personal-technical .personal h2, body ul.sections li.about .about-main .personal-technical .technical h2 {
-              font-weight: bold;
-              text-transform: capitalize;
-              margin-bottom: 20px; }
-            body ul.sections li.about .about-main .personal-technical .personal .content, body ul.sections li.about .about-main .personal-technical .technical .content {
-              display: none; }
-              body ul.sections li.about .about-main .personal-technical .personal .content.active, body ul.sections li.about .about-main .personal-technical .technical .content.active {
-                display: block; }
+          body ul.sections li.about .about-main .personal-technical .personal .content, body ul.sections li.about .about-main .personal-technical .technical .content {
+            display: none; }
+            body ul.sections li.about .about-main .personal-technical .personal .content.active, body ul.sections li.about .about-main .personal-technical .technical .content.active {
+              display: block; }
       @media (min-width: 800px) {
         body ul.sections li.about .about-main::after {
           clear: both;
@@ -90,6 +89,13 @@ body ul.sections {
           float: left; } }
     body ul.sections li.projects {
       background: orange; }
+    body ul.sections li.connect {
+      background: blue; }
+      body ul.sections li.connect .contact {
+        height: 100px;
+        width: 100px;
+        background: red;
+        display: inline-block; }
     body ul.sections li.active {
       top: 20px;
       opacity: 1;
@@ -100,6 +106,7 @@ body .tabs {
   z-index: 999;
   border: 2px solid red;
   width: 100%;
+  margin: 0 auto;
   text-align: center; }
   body .tabs li {
     cursor: pointer;
@@ -117,29 +124,28 @@ body .tabs {
 
 .about {
   background: #00CED6;
-  padding-top: 30px; }
-  .about .about-main {
-    border: 2px solid red; }
-    .about .about-main img {
-      border: 2px solid white;
-      border-radius: 100%;
-      width: 100%;
-      max-width: 100%; }
-    .about .about-main .personal-technical {
-      padding: 40px;
-      margin: 0 20px;
-      border: 4px solid white; }
-      .about .about-main .personal-technical .personal, .about .about-main .personal-technical .technical {
-        cursor: pointer;
+  padding: 30px 0; }
+  .about .about-main img {
+    padding: 5px;
+    border: 4px solid white;
+    border-radius: 100%;
+    width: 100%;
+    max-width: 100%; }
+  .about .about-main .personal-technical {
+    padding: 40px;
+    margin: 0 20px;
+    border: 4px solid white; }
+    .about .about-main .personal-technical .personal, .about .about-main .personal-technical .technical {
+      cursor: pointer;
+      margin-bottom: 20px; }
+      .about .about-main .personal-technical .personal h2, .about .about-main .personal-technical .technical h2 {
+        font-weight: bold;
+        text-transform: capitalize;
         margin-bottom: 20px; }
-        .about .about-main .personal-technical .personal h2, .about .about-main .personal-technical .technical h2 {
-          font-weight: bold;
-          text-transform: capitalize;
-          margin-bottom: 20px; }
-        .about .about-main .personal-technical .personal .content, .about .about-main .personal-technical .technical .content {
-          display: none; }
-          .about .about-main .personal-technical .personal .content.active, .about .about-main .personal-technical .technical .content.active {
-            display: block; }
+      .about .about-main .personal-technical .personal .content, .about .about-main .personal-technical .technical .content {
+        display: none; }
+        .about .about-main .personal-technical .personal .content.active, .about .about-main .personal-technical .technical .content.active {
+          display: block; }
   @media (min-width: 800px) {
     .about .about-main::after {
       clear: both;
@@ -154,6 +160,14 @@ body .tabs {
 
 .projects {
   background: orange; }
+
+.connect {
+  background: blue; }
+  .connect .contact {
+    height: 100px;
+    width: 100px;
+    background: red;
+    display: inline-block; }
 
 .modal {
   overflow: hidden;

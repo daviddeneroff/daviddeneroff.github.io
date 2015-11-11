@@ -9,7 +9,7 @@ var SectionsView = Backbone.View.extend({
     'click .tabs li': function (e) {
       var liIndex = $(e.currentTarget).index();
       $('.sections li').removeClass('active');
-      $($('.sections li')[liIndex]).addClass('active');
+      $($('.sections li.info')[liIndex]).addClass('active');
       $('.tabs li').removeClass('active');
       $(e.currentTarget).addClass('active');
     },

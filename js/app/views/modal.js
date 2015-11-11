@@ -20,7 +20,7 @@ var ModalView = Backbone.View.extend({
     opts = opts || {};
     this.content = opts.content;
     this.extraContent = opts.extraContent || false;
-    this.guid = window.App.guid();
+    this.guid = 122321;
   },
 
   render: function () {
