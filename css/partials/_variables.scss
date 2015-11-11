@@ -1,3 +1,19 @@
-body {
-  border: 10px solid red;
-}
+// colors
+$black: rgb(38, 38, 38);
+$white: rgb(255, 255, 255);
+$faded-black: rgb(29, 30, 26);
+$light-blue: rgb(87, 101, 119);
+$baby-blue: rgb(224, 230, 243);
+$blue: #3498db;
+$white: #f5f3ec;
+$hover-grey: #E9E9E9;
+$turquoise: #00CED6;
+$sea-green: #20B2AA;
+
+// speeds
+$fast: 0.2s;
+$slow: 0.4s;
+$slower: 0.6s;
+
+// sizes
+$mobile: 800px;

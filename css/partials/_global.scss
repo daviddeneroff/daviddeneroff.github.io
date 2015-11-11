@@ -1,10 +1,46 @@
-@mixin hi {
-  .hey {
-    color: blue;
-  }
-}
-
 body {
-  background: green;
-  @include hi;
+  ul.sections {
+    height: calc(100% - 100px);
+    width: 100%;
+    li {
+      position: absolute;
+      top: 10px;
+      width: 100%; 
+      opacity: 0;
+      z-index: -10;
+      @import "about";
+      @import "projects";
+      @import "connect";
+      &.active {
+        top: 20px;
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+  }
+  .tabs {
+    position: absolute;
+    bottom: 50px;
+    z-index: 999;
+    border: 2px solid red;
+    width: 100%;
+    text-align: center;
+    li {
+      cursor: pointer;
+      display: inline-block;
+      background: red;
+      height: 20px;
+      width: 20px; 
+      border-radius: 100%;
+      &:hover {
+        background: darken(red, 20);
+      }
+      &.active {
+        background: blue;
+        &:hover {
+          background: darken(blue, 20);
+        }
+      }
+    } 
+  }
 }

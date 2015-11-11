@@ -1,0 +1,96 @@
+// @include keyframes(pulse) {
+//   0% {
+//     opacity: .5;
+//   }
+//   50% {
+//     opacity: 1
+//   }
+//   100% {
+//     opacity: .5;
+//   }
+// }
+
+
+// body.hide-content {
+//   @media (max-width: $mobile) {
+//     > div div.page {
+//       display: none;
+//     }
+//     .modal {
+//       position: relative !important;
+//     }
+//   }
+// }
+
+
+.modal {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  text-align: center;
+  opacity: 0;
+  @include transform(translateZ(0));
+  @include transition(opacity $slow);
+  &.onboard {
+    .content {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .content {
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    z-index: 10;
+    position: fixed;
+    background: $white;
+    @include transform(translate(-50%, -50%));
+    @include transition(opacity $slow, top $slow);
+  }
+
+  &.active {
+    opacity: 1;
+    @include transition(opacity .7s);
+  
+    .content {
+      // top: 0;
+      opacity: 1;
+      overflow: hidden;
+      @include transition(opacity $slow $slow, top $slow $slow);
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: .2;
+    background: black;
+    @include transform(none);
+    @media (max-width: $mobile) {
+      // background-color: $white;
+      opacity: 1;
+    }
+  }
+}
+.modal .close {
+  background: transparent;
+  position: absolute;
+  cursor: pointer;
+  border: 0px;
+  right: 20px;
+  top: 20px;
+  &:after {
+    font-size: 24px;
+    content: '\f00d';
+    font-family: 'FontAwesome';
+  }
+}

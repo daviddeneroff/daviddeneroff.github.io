@@ -3,7 +3,8 @@ module.exports = function(grunt) {
 		sass: {
 			dev: {
 				options: {
-					outputStyle: 'expanded'
+					outputStyle: 'expanded',
+					sourceMap: true
 				},
 				files: {
 					'css/main.css': 'css/main.scss'
@@ -12,44 +13,37 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
-			sass: {
-				files: ['css/*.scss', 'css/partials/*.scss'],
-				tasks: ['sass:dev']
-			},
-			options: {
-				livereload: true
-			}
-		},
-
-		requirejs: {
 		  compile: {
-		    options: {
-		      baseUrl: "js",
-		      name: "lib/almond",
-		      mainConfigFile: "js/main.js",
-		      out: "js/build.main.js",
-		      // fill out later
-		      include: [
-		      	"main"
-		      ],
-		      done: function(done, output) {
-		        var duplicates = require('rjs-build-analysis').duplicates(output);
-
-		        if (Object.keys(duplicates).length > 0) {
-		          grunt.log.subhead('Duplicates found in requirejs build:');
-		          for (var key in duplicates) {
-		            grunt.log.error(duplicates[key] + ": " + key);
-		          }
-		          return done(new Error('r.js built duplicate modules, please check the excludes option.'));
-		        } else {
-		          grunt.log.success("No duplicates found!");
-		        }
-
-		        done();
-		      }
-		    }
-		  }
+	        files: ['css/*.scss', 'css/partials/*.scss'],
+	        tasks: ['sass:dev']
+	      },
+	      livereload: {
+	      options: { livereload: true },
+	        files: ['css/main.css'],
+	      }
 		},
+
+    requirejs: {
+      compile: {
+        options: {
+          almond: true,
+          wrap: {
+                start: ";(function() {",
+                end: "}());"
+          },
+          preserveLicenseComments: false,
+          baseUrl: "js/app",
+          name: "../lib/almond",
+          include: [
+            "main",
+            "router",
+            "pages/index"
+          ],
+          mainConfigFile: "js/app/main.js",
+          out: "build/main.js"
+        }
+      }
+    },
 
 		shell: {
 			server: {
@@ -59,12 +53,15 @@ module.exports = function(grunt) {
 				}
 			}
 		}
+
 	});
 
-	grunt.loadNpmTasks('grunt-sass');
-	grunt.loadNpmTasks('grunt-shell-spawn');
-	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-shell-spawn');
+	grunt.loadNpmTasks('grunt-sass');
 
 	grunt.registerTask('default', ['shell:server', 'watch']);
+  grunt.registerTask('build', ['requirejs']);	
 };

@@ -1,3 +1,16 @@
+/* CSS Resets, Libaries & Variables */
+@import "partials/reset";
 @import "bourbon/bourbon";
-@import "partials/global";
 @import "partials/variables";
+@import "partials/mixins";
+
+/* Site specific CSS */
+@import "partials/global";
+@import "partials/footer";
+@import "partials/header";
+@import "partials/about";
+@import "partials/projects";
+@import "partials/connect";
+
+// views
+@import "partials/modal";

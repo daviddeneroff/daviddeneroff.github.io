@@ -1,0 +1,454 @@
+.modal.onboard {
+  .content {
+    .close {
+      z-index: 9999;
+    }
+    .sections {
+      .slide {
+        &.shop, &.brands, &.best, &.details {
+          opacity: 0;
+          z-index: -1;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          @include transition(opacity $fast);
+          &.active {
+            opacity: 1;
+            z-index: 1;
+            @include transition(opacity $slow);
+          }
+          .shopping-bag, .favorite-brands, .best-look, .details {
+            height: 100%;
+            h2 {
+              padding-top: 80px;
+              font-weight: bold;
+              font-size: 30px;
+              padding-bottom: 30px;
+            }
+            .bottom-nav {
+              position: absolute;
+              bottom: 300px;
+              width: 100%;
+            }
+            span.button {
+              cursor: pointer;
+              display: inline-block;
+              text-transform: uppercase;
+              letter-spacing: 4px;
+              padding: 10px 0;
+              width: 200px;
+              margin: 20px 0;
+              font-weight: bold;
+            }
+            .dots-nav {
+              li {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                border-radius: 100%;
+                display: inline-block;
+                @include transition(background $fast);
+                margin: 0 3px;
+                &:not(.active-test) {
+                  &:hover {
+                    background: darken(white, 20);
+                    @include transition(background $slow);
+                  }
+                }
+              }
+            }
+          }
+        }
+        .details {
+          background: rgb(0, 145, 222);
+          h2, p.top {
+            color: white;
+            font-weight: bold;
+          }
+          h2 {
+            padding-bottom: 10px !important;
+          }
+          .form-fields {
+            width: 350px;
+            margin: 0 auto;
+            > div {
+              margin-top: 20px;
+              p {
+                text-transform: capitalize;
+                text-align: left;
+                margin-bottom: 10px;
+              }
+              ::-webkit-input-placeholder {
+                font-size: 12px;
+              }
+              :-moz-placeholder {
+                font-size: 12px;
+              }
+              ::-moz-placeholder {
+                font-size: 12px;
+              }
+              :-ms-input-placeholder {
+                font-size: 12px;
+              }
+              input {
+                height: 60px;
+                width: 350px;
+                padding-left: 15px;
+                border: none; 
+              }
+            }
+          }
+          span.button {
+            border: 2px solid white;
+            color: white;
+            width: 300px !important;
+            opacity: .5;
+            @include transition(background $fast, color $fast, opacity $fast);
+            &:hover {
+              opacity: 1;
+              background: white;
+              color: rgb(0, 145, 222);
+              @include transition(background $slow, color $slow, opacity $slow);
+            }
+          }
+          .dots-nav {
+            li {
+              background: white;
+              &.active, &.active-test {
+                background: yellow;
+              }
+            }
+          }
+        }
+        .best-look {
+          .slider-top, .slider-middle, .slider-bottom {
+            text-align: center;
+            width: 90%;
+            margin: 0 auto;
+            padding-left: 20px;
+            position: relative;
+            padding-bottom: 20px;
+            .slide {
+              img {
+                text-align: center;
+                margin: 0 auto;
+              }
+            }
+            button {
+              position: absolute;
+              cursor: pointer;
+              height: 50px;
+              width: 50px;
+              top: 50%;
+              top: 50%;
+              z-index: 99;
+              transform: translate(0, -50%);
+              &.slick-next, &.slick-prev {
+                &:hover {
+                  &:before {
+                    font-size: 35px;
+                    @include transition(font-size $slow);
+                  }
+                }
+              }
+              &.slick-next {
+                background: transparent;
+                border: none;
+                right: 38%;
+                opacity: 1;
+                &:before {
+                  content: '\f105';
+                }
+              }
+              &.slick-prev {
+                background: transparent;
+                border: none;
+                left: 40%;
+                opacity: 1;
+                &:before {
+                  content: '\f104';
+                }
+              }
+              &:before {
+                font-size: 24px;
+                color: rgb(238, 16, 97);
+                font-family: 'FontAwesome';
+                @include transition(font-size $fast);
+              }
+            } 
+          }
+          .bottom-nav {
+            bottom: 90px !important;
+          }
+          span.button {
+            color: black;
+            border: 2px solid black;
+            @include transition(background $fast, color $fast);
+            &:hover {
+              color: white;
+              background: black;
+              @include transition(background $slow, color $slow);
+            }
+          }
+          .dots-nav {
+            li {
+              background: rgb(193, 193, 193);
+              &.active, &.active-test {
+                background: rgb(255, 0, 81);
+              }
+            }
+          }
+        }
+        .favorite-brands {
+          background: rgb(128, 205, 200);
+          h2 {
+            color: white;
+            font-weight: bold;
+          }
+          .brand-tags {
+            margin-top: 30px;
+            .row {
+              margin-bottom: 30px;
+              .item {
+                background: white;
+                display: inline-block;
+                padding: 10px 20px;
+                margin-left: 15px;
+                cursor: pointer;
+                @include transition(background $fast);
+                &.active {
+                  @include transition(background $slow);
+                  &.green {
+                    background: rgb(0, 255, 133);
+                  }
+                  &.red {
+                    background: rgb(238, 16, 97);
+                  }
+                  &.turquoise {
+                    background: rgb(0, 216, 197);
+                  } 
+
+                  &.blue {
+                    background: blue;
+                  }
+                  &.grey {
+                    background: grey;
+                  }
+
+                  &.yellow {
+                    background: yellow;
+                  }
+
+                  &.purple {
+                    background: rgb(131, 45, 255);
+                  }
+                  &.orange {
+                    background: orange;
+                  }
+                }
+                &.right-light {
+                  -ms-transform: rotate(4deg);
+                  -webkit-transform: rotate(4deg);
+                  transform: rotate(4deg);
+                }
+                &.left-light {
+                  -ms-transform: rotate(-3deg);
+                  -webkit-transform: rotate(-3deg);
+                  transform: rotate(-3deg);            
+                }
+                &.right-big {
+                  -ms-transform: rotate(7deg);
+                  -webkit-transform: rotate(7deg);
+                  transform: rotate(7deg);
+                }
+                &.left-big {
+                  -ms-transform: rotate(-9deg);
+                  -webkit-transform: rotate(-9deg);
+                  transform: rotate(-9deg); 
+                }
+              }
+            }
+          }
+          span.button {
+            color: black;
+            border: 2px solid black;
+            @include transition(background $fast, color $fast);
+            &:hover {
+              color: rgb(128, 205, 200);
+              background: black;
+              @include transition(background $slow, color $slow);
+            }
+          }
+          .dots-nav {
+            li {
+              background: white;
+              &.active, &.active-test {
+                background: rgb(238, 16, 97);
+              }
+            }
+          }
+        }
+        .shopping-bag {
+          background: rgb(240, 64, 144);
+          .switch {
+            margin: 20px auto;
+            width: 225px;
+            p {
+              margin-top: 8px;
+              text-transform: uppercase;
+              font-size: 14px;
+            }
+            p.female {
+              float: left;
+            }
+            p.male {
+              float: right;
+            }
+
+            .onoffswitch {
+              position: relative; 
+              width: 60px;
+              -webkit-user-select:none;
+              -moz-user-select:none;
+              -ms-user-select: none;
+              margin: 0 auto;
+            }
+            .onoffswitch-checkbox {
+              display: none;
+            }
+            .onoffswitch-label {
+              display: block;
+              overflow: hidden;
+              cursor: pointer;
+              border-radius: 20px;
+            }
+            .onoffswitch-inner:before, .onoffswitch-inner:after {
+              display: block;
+              float: left; 
+              width: 50%; 
+              height: 30px; 
+              padding: 0; 
+              line-height: 30px;
+              font-size: 14px; 
+              color: white; 
+              font-weight: bold;
+              box-sizing: border-box;
+              background: white;
+              content: "";
+            }
+            .onoffswitch-inner:after {
+              padding-right: 10px;
+              text-align: right;
+            }
+            .onoffswitch-switch {
+              display: block;
+              width: 33px;
+              height: 30px;
+              margin: 6px 0;
+              background: rgb(0,255, 133);
+              position: absolute; 
+              top: -6px;
+              bottom: 0;
+              border-radius: 20px;
+              // transition: all 0.3s ease-in 0s; 
+            }
+            .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+              // margin-left: 0;
+            }
+            .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+              right: 0px;
+            }
+          }
+          .options {
+            margin: 30px 0;
+            .option {
+              display: inline-block;
+              position: relative;
+              .cover {
+                z-index: 2;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                display: none;
+                &.active {
+                  display: block;
+                }
+              }
+              .remove {
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                z-index: 3;
+                left: 0;
+                opacity: 0;
+                &.active {
+                  opacity: 1;
+                }
+              }
+              .color {
+                height: 100px;
+                width: 100px;
+                border-radius: 100%;
+                background: blue;
+                z-index: 1;
+                position: relative;
+                &.active {
+                  opacity: .5;
+                }
+                &.grey {
+                  background: rgb(230, 230, 230);
+                }
+                &.light-blue {
+                  background: rgb(4, 211, 249);
+                }
+                &.red {
+                  background: rgb(238, 16, 97);
+                }
+              }
+              p {
+                margin-top: 20px;
+                text-align: center;
+              }
+              &.middle {
+                margin: 0 15px;
+              }
+            }
+          }
+          .shopping-cart {
+            i {
+              cursor: pointer;
+              font-size: 125px;
+              &.active {
+                -webkit-transform: scale(1.3);
+                -ms-transform: scale(1.3);
+                transform: scale(1.3);
+              }
+            }
+          }
+          span.button {
+            border: 2px solid white;
+            color: white;
+            @include transition(color $slow);
+            @include transition(background $slow);
+            &:hover {
+              background: white;
+              color: rgb(240, 64, 144);
+              @include transition(color $slow);
+              @include transition(background $slow);
+            }
+          }
+          .dots-nav {
+            li {
+              background: white;
+              &.active, &.active-test {
+                background: rgb(128, 205, 200);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
